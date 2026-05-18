@@ -1,0 +1,11 @@
+.streamlit/secrets.toml
+__pycache__/
+venv/
+*.pyc   
+.ipynb_checkpoints/
+generated_chart.png
+*.pptx
+*.jpg
+*.png
+Partner Performance Report.code-workspace
+~$*

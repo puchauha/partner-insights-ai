@@ -1,0 +1,29 @@
+"line graph for partner Outage"
+
+partner outage details in a table
+
+partner outage details  yearly in a bar graph
+
+Outage issue details in a heatmap
+
+outage duration yearly 
+
+Compare partner outages
+
+partner outage details  yearly in a bar graph
+
+Compare partner outages in a table not heatmap
+
+heatmap of  issue details for each partner
+
+total outage count 
+
+outage count  and hours for Oceanic
+
+outage count  and outage hours per partner	
+
+average outage hours per partner desc	
+
+average outage hours per partner desc in pie chart	
+
+Partner comparison on outage hours and total outages	
