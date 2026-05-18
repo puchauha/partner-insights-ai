@@ -15,7 +15,7 @@ import seaborn as sns
 from typing import TypedDict, Dict, Any
 
 # Import notebook display helper
-from IPython.display import display
+#from IPython.display import display
 
 # Import LangGraph workflow classes
 from langgraph.graph import StateGraph, END
@@ -716,92 +716,92 @@ workflow.add_edge(
 analytics_graph = workflow.compile()
 
 # %%
-# Function to render execution output
-def display_execution_result(
-    execution_result: Dict[str, Any]
-):
+# # Function to render execution output
+# def display_execution_result(
+#     execution_result: Dict[str, Any]
+# ):
     
-    # Extract status
-    status = execution_result.get("status")
+#     # Extract status
+#     status = execution_result.get("status")
 
-    # Handle execution failure
-    if status != "success":
+#     # Handle execution failure
+#     if status != "success":
 
-        # Print failure message
-        print("Execution failed")
+#         # Print failure message
+#         print("Execution failed")
 
-        # Print detailed error
-        print(execution_result.get("error"))    
-        print(execution_result.get("user_message"))
+#         # Print detailed error
+#         print(execution_result.get("error"))    
+#         print(execution_result.get("user_message"))
 
-        # Stop further processing
-        return
+#         # Stop further processing
+#         return
 
-    # Extract result
-    result = execution_result.get("result")
+#     # Extract result
+#     result = execution_result.get("result")
 
-    # Handle dataframe output
-    if isinstance(result, pd.DataFrame):
+#     # Handle dataframe output
+#     if isinstance(result, pd.DataFrame):
 
-        # Display dataframe
-        display(result)
+#         # Display dataframe
+#         display(result)
 
-    # Handle numeric output
-    elif isinstance(result, (int, float, np.number)):
+#     # Handle numeric output
+#     elif isinstance(result, (int, float, np.number)):
 
-        # Print numeric value
-        print(f"Result: {result}")
+#         # Print numeric value
+#         print(f"Result: {result}")
 
-    # Handle visualization output
-    else:
+#     # Handle visualization output
+#     else:
 
-        # Attempt chart rendering
-        try:
+#         # Attempt chart rendering
+#         try:
 
-            # Configure chart size
-            plt.gcf().set_size_inches(
-                DEFAULT_FIGSIZE
-            )
+#             # Configure chart size
+#             plt.gcf().set_size_inches(
+#                 DEFAULT_FIGSIZE
+#             )
 
-            # Render chart
-            plt.show()
+#             # Render chart
+#             plt.show()
 
-        # Fallback display
-        except Exception:
+#         # Fallback display
+#         except Exception:
 
-            # Display raw result
-            display(result)
+#             # Display raw result
+#             display(result)
 
 # %%
-# Create workflow input
-initial_state = {
-    "user_query": "partner outage details in a table",
-    "dataframe": df
-}
+# # Create workflow input
+# initial_state = {
+#     "user_query": "partner outage details in a table",
+#     "dataframe": df
+# }
 
-# Execute workflow
-final_state = analytics_graph.invoke(
-    initial_state
-)
+# # Execute workflow
+# final_state = analytics_graph.invoke(
+#     initial_state
+# )
 
-# Handle invalid analytical queries
-print("is_valid_query := ", final_state.get("is_valid_query"))
-if not final_state.get(
-    "is_valid_query",
-    True
-):
+# # Handle invalid analytical queries
+# print("is_valid_query := ", final_state.get("is_valid_query"))
+# if not final_state.get(
+#     "is_valid_query",
+#     True
+# ):
 
-    print(
-        final_state.get(
-            "validation_message"
-        )
-    )
+#     print(
+#         final_state.get(
+#             "validation_message"
+#         )
+#     )
 
-# Handle valid analytical queries
-else:
+# # Handle valid analytical queries
+# else:
 
-    display_execution_result(
-        final_state["execution_result"]
-    )
+#     display_execution_result(
+#         final_state["execution_result"]
+#     )
 
 
