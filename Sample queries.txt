@@ -27,3 +27,18 @@ average outage hours per partner desc
 average outage hours per partner desc in pie chart	
 
 Partner comparison on outage hours and total outages	
+
+=====================================================================
+
+Partner Outage details in a table
+heatmap of  issue details for each partner
+outage in stacked bar graph
+outage in stacked bar graph in red and green
+partner outage pie chart in grey scale
+outage count and outage duration for oceanic
+average outage duration for all partners desc
+	
+	
+
+
+
